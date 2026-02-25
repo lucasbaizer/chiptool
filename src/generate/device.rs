@@ -7,7 +7,7 @@ use quote::quote;
 use crate::ir::*;
 use crate::util::{self, StringExt};
 
-use super::{sorted, with_defmt_cfg_attr};
+use super::sorted;
 
 pub fn render_device_x(_ir: &IR, d: &Device) -> Result<String> {
     let mut device_x = String::new();
@@ -17,7 +17,7 @@ pub fn render_device_x(_ir: &IR, d: &Device) -> Result<String> {
     Ok(device_x)
 }
 
-pub fn render(opts: &super::Options, ir: &IR, d: &Device, path: &str) -> Result<TokenStream> {
+pub fn render(_opts: &super::Options, ir: &IR, d: &Device, path: &str) -> Result<TokenStream> {
     let mut out = TokenStream::new();
     let span = Span::call_site();
 
