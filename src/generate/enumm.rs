@@ -119,6 +119,7 @@ pub fn render(opts: &super::Options, _ir: &IR, e: &Enum, path: &str) -> Result<T
                 let name = Ident::new(&format!("_RESERVED_{:x}", val), span);
                 let value = util::hex(val);
                 items.extend(quote!(
+                    #[doc(hidden)]
                     #name = #value,
                 ));
             }
